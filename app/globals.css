@@ -97,11 +97,19 @@ footer a:hover { color: white; }
   .shell { width: min(100% - 6rem, 1280px); }
   .section-space { padding-block: 9rem; }
 }
+@media (min-width: 641px) and (max-width: 1023px) {
+  .hero-section { min-height: auto !important; padding-block: 4.5rem 5rem; }
+  .hero-title { max-width: 680px; font-size: clamp(3.25rem, 7.4vw, 5.25rem); }
+  .hero-description { max-width: 600px; }
+  .hero-media { min-height: clamp(360px, 62vw, 520px); }
+}
 @media (max-width: 640px) {
   .shell { width: min(100% - 2.5rem, 1280px); }
   .section-space { padding-block: 5rem; }
-  .hero-title { font-size: clamp(2.9rem, 14vw, 4.5rem); line-height: .94; }
-  .hero-media { min-height: 430px; }
+  .hero-section { min-height: auto !important; padding-block: 3.5rem 4rem; }
+  .hero-title { max-width: 100%; font-size: clamp(2.75rem, 13vw, 4.5rem); line-height: .94; }
+  .hero-description { max-width: 34rem; }
+  .hero-media { min-height: clamp(330px, 108vw, 430px); }
   .hero-media-meta { bottom: 1.5rem; left: 1.5rem; right: 1.5rem; }
   h1 { text-wrap: balance; }
 }
