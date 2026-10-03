@@ -174,7 +174,7 @@ export default function Page() {
             <span>Stock-oriented support for operational, maintenance and project requirements.</span>
           </div>
         </div>
-        <div className="hero-media relative min-h-[430px] overflow-hidden rounded-2xl sm:min-h-[580px]">
+        <div className="hero-media relative overflow-hidden rounded-2xl">
           <div className="hero-media-frame absolute inset-2 z-10 rounded-lg border border-white/20" />
           <Image
             src="/industrial-valve-hero.png"
@@ -277,12 +277,12 @@ export default function Page() {
                 aria-label={`${name}. ${detail}`}
               >
                 <span className="font-mono text-xs text-accent">0{i + 1}</span>
-                <span className="flex-1 text-xl font-medium tracking-[-0.03em] sm:text-2xl">{name}</span>
-                <span className="hidden max-w-[240px] text-right text-xs leading-5 text-white/50 sm:block">{detail}</span>
+                <span className="min-w-0 flex-1 text-xl font-medium tracking-[-0.03em] sm:text-2xl">{name}</span>
+                <span className="hidden max-w-[240px] shrink-0 text-right text-xs leading-5 text-white/50 md:block">{detail}</span>
                 <ArrowRight className="text-white/40 transition-transform duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-1 group-hover:text-gold" size={20} />
               </button>
             ))}
-            <div className="mt-7 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45 sm:hidden">
+            <div className="mt-7 flex items-center justify-between border-t border-white/10 pt-5 text-xs text-white/45 md:hidden">
               <span>{products[activeProduct][1]}</span>
               <span className="font-mono">{String(activeProduct + 1).padStart(2, '0')} / 04</span>
             </div>
@@ -299,7 +299,7 @@ export default function Page() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {industries.map((industry) => (
             <article key={industry.name} className="group relative overflow-hidden rounded-2xl">
-              <div className="relative aspect-[0.82] bg-ink">
+              <div className="relative aspect-[16/10] bg-ink md:aspect-[0.82]">
                 <Image
                   src={industry.image}
                   alt={`${industry.name} industrial application`}
@@ -328,7 +328,7 @@ export default function Page() {
             <p className="max-w-[600px] text-lg leading-8 text-muted">
               When a requirement is specific, the right documentation and product context make the difference. Ask us about applicable standards, materials and technical references for the equipment you need.
             </p>
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-12 grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 lg:grid-cols-4">
               {[
                 ['Materials', 'Body, trim and seating options'],
                 ['Size & class', 'Bore, rating and pressure class'],
@@ -336,7 +336,7 @@ export default function Page() {
                 ['Service fit', 'Media, duty and operating context'],
               ].map(([item, detail]) => (
                 <div key={item} className="rounded-xl bg-background p-4">
-                  <span className="block text-xl font-semibold tracking-[-0.04em]">{item}</span>
+                  <span className="block text-base font-semibold tracking-[-0.04em]">{item}</span>
                   <span className="mt-2 block text-xs leading-4 text-muted">{detail}</span>
                 </div>
               ))}
@@ -385,13 +385,13 @@ export default function Page() {
               Talk to the team <ArrowRight size={17} />
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="rounded-2xl bg-accent p-6 text-white">
               <MapPin size={20} />
               <p className="mt-16 text-lg font-semibold">Abu Dhabi</p>
               <p className="mt-1 text-sm text-white/70">United Arab Emirates</p>
             </div>
-            <div className="mt-10 rounded-2xl bg-surface p-6">
+            <div className="rounded-2xl bg-surface p-6 sm:mt-10">
               <Mail size={20} className="text-accent" />
               <p className="mt-14 text-sm font-semibold">Clear point of contact</p>
               <p className="mt-1 text-sm leading-5 text-muted">Email us for the next requirement.</p>
