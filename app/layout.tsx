@@ -1,11 +1,17 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Manrope } from 'next/font/google'
 import './globals.css'
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Al Marsah | Flow-control equipment for demanding applications',
   description: 'Specialist UAE supplier of valves, actuators, pumps and flow-control equipment for oil and gas, marine, offshore and industrial applications.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -39,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable} data-scroll-behavior="smooth">
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
